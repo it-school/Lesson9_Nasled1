@@ -7,7 +7,10 @@ public class Room2D
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if (width > 0)
+            this.width = width;
+        else
+            isError = true;
     }
 
     public double getLength() {
@@ -15,7 +18,10 @@ public class Room2D
     }
 
     public void setLength(double length) {
-        this.length = length;
+        if (length > 0)
+            this.length = length;
+        else
+            isError = true;
     }
 
     public Room2D()
@@ -28,6 +34,12 @@ public class Room2D
             isError = false;
         else
             isError = true;
+    }
+
+    public Room2D(double width)
+    {
+        this.width = this.length = width;
+        CheckCorrectness();
     }
 
     public Room2D(double width, double length) {

@@ -2,19 +2,25 @@ package com.itschool;
 
 public class Room3D extends Room2D
 {
+    private double height;
+
     public double getHeight() {
         return height;
     }
-
     public void setHeight(double height) {
         this.height = height;
     }
 
-    double height;
-
     public Room3D(double width, double length, double height) {
         super(width, length);
         this.height = height;
+        CheckCorrectness();
+    }
+
+    public Room3D(double size)
+    {
+        super(size);
+        this.height = size;
         CheckCorrectness();
     }
 
